@@ -1,5 +1,7 @@
-/.idea
-/bin
-/logs
-/images
-/test_samples/
+/.idea/
+/logs/
+/images/
+/test_sample/
+/training/.ipynb_checkpoints/
+/training/models/
+/training/train_data/
