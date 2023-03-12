@@ -1,5 +1,5 @@
 from imageai.Detection import ObjectDetection
-from config import CAP_MODEL_PATH
+from config import TAG_MODEL_PATH
 
 detector = None
 
@@ -8,7 +8,7 @@ class ObjectDetector:
     def __init__(self):
         self.detector = ObjectDetection()
         self.detector.setModelTypeAsRetinaNet()
-        self.detector.setModelPath(CAP_MODEL_PATH)
+        self.detector.setModelPath(TAG_MODEL_PATH)
         self.detector.loadModel()
 
     def detect_objects(self, image_path):
@@ -17,4 +17,4 @@ class ObjectDetector:
         return set(object_names)
 
 
-DETECTOR = ObjectDetector()
+TAG_GENERATOR = ObjectDetector()

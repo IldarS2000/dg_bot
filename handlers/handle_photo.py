@@ -1,7 +1,7 @@
 import os
 from aiogram import types
 from bot import dp
-from caption_generator import DETECTOR
+from tag_generator import TAG_GENERATOR
 from description_generator import DESCRIPTION_GENERATOR
 
 
@@ -16,7 +16,7 @@ async def cmd_handle_photo(message: types.Message):
     image_path = os.path.join("..", "images", f"image{cmd_handle_photo.IMAGE_COUNTER}.jpg")
     await message.photo[-1].download(image_path)
 
-    object_names = DETECTOR.detect_objects(image_path)
+    object_names = TAG_GENERATOR.detect_objects(image_path)
     description = DESCRIPTION_GENERATOR.generate_description(image_path)
 
     result = ""
